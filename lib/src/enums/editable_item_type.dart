@@ -1,0 +1,3 @@
+enum EditableItemType { 
+  text, graphic 
+}
