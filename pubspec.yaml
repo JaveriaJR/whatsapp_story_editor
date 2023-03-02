@@ -1,6 +1,6 @@
 name: whatsapp_story_editor
 description: A Flutter package to add story editing features similar to Whatsapp.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/JaveriaJR/whatsapp_story_editor/tree/main
 
 environment:

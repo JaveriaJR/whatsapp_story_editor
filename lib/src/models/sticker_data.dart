@@ -50,17 +50,17 @@ class StickerPacks {
 
   StickerPacks(
       {this.identifier,
-        this.name,
-        this.publisher,
-        this.trayImageFile,
-        this.imageDataVersion,
-        this.avoidCache,
-        this.publisherEmail,
-        this.publisherWebsite,
-        this.privacyPolicyWebsite,
-        this.licenseAgreementWebsite,
-        this.stickers,
-        this.animatedStickerPack});
+      this.name,
+      this.publisher,
+      this.trayImageFile,
+      this.imageDataVersion,
+      this.avoidCache,
+      this.publisherEmail,
+      this.publisherWebsite,
+      this.privacyPolicyWebsite,
+      this.licenseAgreementWebsite,
+      this.stickers,
+      this.animatedStickerPack});
 
   StickerPacks.fromJson(Map<String, dynamic> json) {
     identifier = json['identifier'];
@@ -102,7 +102,7 @@ class StickerPacks {
   }
 
   @override
-  String toString() { 
+  String toString() {
     return "identifier: $identifier, name: $name, publisher: $publisher";
   }
 }

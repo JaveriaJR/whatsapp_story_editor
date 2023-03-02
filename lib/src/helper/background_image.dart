@@ -8,7 +8,7 @@ import 'package:whatsapp_story_editor/src/enums/editable_item_type.dart';
 import 'package:whatsapp_story_editor/src/enums/editing_mode.dart';
 import 'package:whatsapp_story_editor/src/models/graphic_info.dart';
 import 'package:whatsapp_story_editor/src/views/paint_view.dart';
-import 'package:whatsapp_story_editor/src/helper/transformable.dart'; 
+import 'package:whatsapp_story_editor/src/helper/transformable.dart';
 import 'package:whatsapp_story_editor/src/widgets/text_dialog.dart';
 
 class BackgroundImage extends StatefulWidget {

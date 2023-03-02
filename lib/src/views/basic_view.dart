@@ -10,7 +10,6 @@ import 'package:whatsapp_story_editor/src/widgets/bars/editing_bar.dart';
 import 'package:whatsapp_story_editor/src/widgets/filter_title.dart';
 import '../widgets/vertical_gest_behavior.dart';
 
-
 /// the basic skeleton of all editing bars
 class BasicView extends StatelessWidget {
   final File file;

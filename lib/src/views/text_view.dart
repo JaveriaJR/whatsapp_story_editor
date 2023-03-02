@@ -11,10 +11,10 @@ import 'package:whatsapp_story_editor/src/widgets/bars/bottom_bar.dart';
 import 'package:whatsapp_story_editor/src/widgets/bars/caption_bar.dart';
 import 'package:whatsapp_story_editor/src/widgets/circle_widget.dart';
 import 'package:whatsapp_story_editor/src/widgets/done_btn.dart';
-import 'package:whatsapp_story_editor/src/widgets/text_dialog.dart'; 
+import 'package:whatsapp_story_editor/src/widgets/text_dialog.dart';
 import 'package:whatsapp_story_editor/src/widgets/undo.dart';
 
-///Allows to add Text over the Image 
+///Allows to add Text over the Image
 class TextView extends StatefulWidget {
   const TextView({Key? key}) : super(key: key);
 
@@ -45,6 +45,7 @@ class _TextViewState extends State<TextView> {
             bottomBar(context: context),
           ],
         ),
+
         /// to add text on clicking anywhere on screen
         Positioned(
             top: sHeight * Constants.editingBarHeightRatio,

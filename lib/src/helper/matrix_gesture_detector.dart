@@ -1,7 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'dart:math';
-import 'package:flutter/widgets.dart'; 
+import 'package:flutter/widgets.dart';
 
 typedef MatrixGestureDetectorCallback = void Function(
     Matrix4 matrix,

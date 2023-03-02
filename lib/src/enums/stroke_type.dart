@@ -1,5 +1,1 @@
-enum StrokeType { 
-  pen, 
-  marker, 
-  neon 
-}
+enum StrokeType { pen, marker, neon }
