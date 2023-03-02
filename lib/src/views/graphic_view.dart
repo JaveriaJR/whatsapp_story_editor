@@ -10,6 +10,7 @@ import 'package:whatsapp_story_editor/src/models/graphic_info.dart';
 import 'package:whatsapp_story_editor/src/widgets/circle_widget.dart';
 import 'package:whatsapp_story_editor/src/widgets/icon_widget.dart';
 
+// Allows to add Graphic (Stickers/Emojie)
 class GraphicView extends StatefulWidget {
   const GraphicView({Key? key}) : super(key: key);
 

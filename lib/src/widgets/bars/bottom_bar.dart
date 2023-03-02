@@ -6,6 +6,7 @@ import 'package:whatsapp_story_editor/src/controller/utils.dart';
 import 'package:whatsapp_story_editor/src/widgets/circle_widget.dart';
 import 'package:whatsapp_story_editor/whatsapp_story_editor.dart';
 
+///Bottom Bar containing the done button and status excluded people status
 bottomBar({required BuildContext context}) => Container(
       height:
           MediaQuery.of(context).size.height * Constants.bottomBarHeightRatio,

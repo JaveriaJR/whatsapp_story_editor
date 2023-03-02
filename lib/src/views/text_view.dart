@@ -14,6 +14,7 @@ import 'package:whatsapp_story_editor/src/widgets/done_btn.dart';
 import 'package:whatsapp_story_editor/src/widgets/text_dialog.dart'; 
 import 'package:whatsapp_story_editor/src/widgets/undo.dart';
 
+///Allows to add Text over the Image 
 class TextView extends StatefulWidget {
   const TextView({Key? key}) : super(key: key);
 

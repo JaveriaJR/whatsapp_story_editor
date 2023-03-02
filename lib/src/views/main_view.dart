@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hsv_color_pickers/hsv_color_pickers.dart'; 
+import 'package:hsv_color_pickers/hsv_color_pickers.dart';
 import 'package:whatsapp_story_editor/src/controller/editing_controller.dart';
 import 'package:whatsapp_story_editor/src/enums/editing_mode.dart';
 import 'package:whatsapp_story_editor/src/views/basic_view.dart';
@@ -28,7 +28,7 @@ class _MainControllerViewState extends State<MainControllerView> {
   Widget build(BuildContext context) {
     //moved Material App from here to whatsappstoryeditor screen
     return WillPopScope(
-      onWillPop: () async { 
+      onWillPop: () async {
         Navigator.popUntil(context, (route) => route.isFirst);
         return true;
       },

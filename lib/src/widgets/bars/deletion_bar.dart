@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_story_editor/src/constants.dart';
 import 'package:whatsapp_story_editor/src/widgets/icon_widget.dart';
 
+///allows to delete graphic (Sticker/Emojie) by dragging to top left corner
 deletionBar({required BuildContext context}) {
   return Container(
     height:

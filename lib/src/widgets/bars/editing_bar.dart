@@ -10,6 +10,7 @@ import 'package:whatsapp_story_editor/src/views/graphic_view.dart';
 import 'package:whatsapp_story_editor/src/widgets/icon_widget.dart';
 import 'package:whatsapp_story_editor/src/widgets/undo.dart';
 
+/// The top editing bar containing crop, graphics (Stickers/Emojie), text and Painting
 editingBar({required BuildContext context, required File file}) {
   return Container(
     height:

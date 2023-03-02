@@ -5,6 +5,7 @@ import 'package:whatsapp_story_editor/src/constants.dart';
 import 'package:whatsapp_story_editor/src/controller/editing_controller.dart';
 import 'package:whatsapp_story_editor/src/enums/editing_mode.dart';
 
+/// the filters bar allows to add filters to image
 filtersBar({required File file}) {
   final EditingController controller = Get.find<EditingController>();
   return Container(

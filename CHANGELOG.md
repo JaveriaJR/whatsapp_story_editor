@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * Added documentation changes
+
+## 0.0.3
+
+* Added comments and static analysis

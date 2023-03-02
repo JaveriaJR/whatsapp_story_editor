@@ -18,6 +18,7 @@ List<Stroke> lines = <Stroke>[];
 Stroke? line;
 var drawingUndoController = StreamController<bool>.broadcast();
 
+/// Allows to add Painting & Drawing
 class PaintView extends StatefulWidget {
   final bool shouldShowControls;
   const PaintView({Key? key, required this.shouldShowControls})

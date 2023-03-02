@@ -7,6 +7,7 @@ import 'package:whatsapp_story_editor/src/controller/editing_controller.dart';
 import 'package:whatsapp_story_editor/src/controller/utils.dart';
 import 'package:whatsapp_story_editor/src/widgets/icon_widget.dart';
 
+//Allows to crop image
 class CropView extends StatefulWidget {
   final File image;
   const CropView({Key? key, required this.image}) : super(key: key);
@@ -80,22 +81,24 @@ class _CropViewState extends State<CropView> {
             icon: Icons.rotate_90_degrees_ccw,
             onTap: () {
               setState(() {
-                rotation++;
-                rotation > 3
-                    ? rotation = 0
-                    : rotation < 0
-                        ? rotation = 0
-                        : rotation;
+                // between the range of [0,3]
+                rotation = (rotation + 1) % 4;
+                if (rotation < 0) {
+                  rotation += 4;
+                }
 
-                rotation == 0
-                    ? angle = 2 * math.pi
-                    : rotation == 1
-                        ? angle = math.pi / 2
-                        : rotation == 2
-                            ? angle = math.pi
-                            : rotation == 3
-                                ? angle = 3 * math.pi / 2
-                                : 0;
+                if (rotation == 0) {
+                  angle = 2 * math.pi;
+                } else if (rotation == 1) {
+                  angle = math.pi / 2;
+                } else if (rotation == 2) {
+                  angle = math.pi;
+                } else if (rotation == 3) {
+                  angle = 3 * math.pi / 2;
+                } else {
+                  angle = 0;
+                }
+
                 controller.rotation = rotation;
                 controller.rotationAngle = angle;
               });

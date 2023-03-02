@@ -6,12 +6,16 @@ import 'package:whatsapp_story_editor/src/controller/editing_binding.dart';
 import 'package:whatsapp_story_editor/src/views/main_view.dart';
 import 'package:whatsapp_camera/whatsapp_camera.dart';
 
+///To encapsulate the result of editing a WhatsApp story.
+///The image property contains the edited image,
+///and the caption property contains the caption (if any) that was added to the image.
 class WhatsappStoryEditorResult {
   MemoryImage image;
   String? caption;
   WhatsappStoryEditorResult({required this.image, this.caption});
 }
 
+///Allows users to edit a WhatsApp story by adding captions and stickers to an image.
 class WhatsappStoryEditor extends StatefulWidget {
   const WhatsappStoryEditor({Key? key}) : super(key: key);
 
@@ -20,26 +24,22 @@ class WhatsappStoryEditor extends StatefulWidget {
 }
 
 class _WhatsappStoryEditorState extends State<WhatsappStoryEditor> {
-  // final files = ValueNotifier(<File>[]);
-
   @override
   void initState() {
-    // files.addListener(() => setState(() {}));
+    //Switch to WhatsappCamera
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      // List<File>? res =
       await Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => const WhatsappCamera(),
         ),
       ).then((res) {
+        //pass results to MainController
         if (res != null) {
-          // files.value = res;
           Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => MainControllerView(
-                // file: files.value.first,
                 file: res[0],
               ),
             ),
@@ -57,7 +57,7 @@ class _WhatsappStoryEditorState extends State<WhatsappStoryEditor> {
   }
 
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
         Navigator.popUntil(context, (route) => route.isFirst);
