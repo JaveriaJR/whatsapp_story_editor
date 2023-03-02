@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_story_editor/src/constants.dart';
 
 circleWidget(
         {double? radius = 50,

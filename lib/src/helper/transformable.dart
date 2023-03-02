@@ -1,6 +1,7 @@
 // ignore_for_file: import_of_legacy_library_into_null_safe
 import 'package:flutter/material.dart';
-import 'package:matrix_gesture_detector/matrix_gesture_detector.dart';
+import 'package:whatsapp_story_editor/src/helper/matrix_gesture_detector.dart';
+// import 'package:matrix_gesture_detector/matrix_gesture_detector.dart';
 
 class TransformableWidget extends StatefulWidget {
   final Widget child;
@@ -44,7 +45,7 @@ class _TransformableWidgetState extends State<TransformableWidget> {
         notifier.value = m;
         if (widget.onDetailsUpdate != null) {
           widget.onDetailsUpdate!(notifier.value);
-        } 
+        }
       },
       child: GestureDetector(
         onTap: () {

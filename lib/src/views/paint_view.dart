@@ -8,7 +8,7 @@ import 'package:whatsapp_story_editor/src/enums/editing_mode.dart';
 import 'package:whatsapp_story_editor/src/models/paint_info.dart';
 import 'package:whatsapp_story_editor/src/models/stroke_options_model.dart';
 import 'package:whatsapp_story_editor/src/widgets/circle_widget.dart';
-import 'package:whatsapp_story_editor/src/widgets/main/sketcher.dart';
+import 'package:whatsapp_story_editor/src/helper/sketcher.dart';
 import '../models/stroke_model.dart';
 import '../widgets/color_picker_slider.dart';
 import '../widgets/done_btn.dart';
@@ -132,6 +132,7 @@ class Painter extends StatefulWidget {
   const Painter({Key? key, required this.shouldShowControls}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _PainterState createState() => _PainterState();
 }
 

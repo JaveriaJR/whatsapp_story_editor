@@ -21,7 +21,6 @@ class _CropViewState extends State<CropView> {
   int rotation = 0;
   double angle = 0;
   late File imageToCrop;
-  late File _lastCropped;
 
   @override
   void initState() {
@@ -139,7 +138,6 @@ class _CropViewState extends State<CropView> {
     sample.delete();
 
     // _lastCropped?.delete();
-    _lastCropped = file;
     // debugPrint(' file:::: $file --- $_lastCropped');
     Get.find<EditingController>().backgroundImage = file;
     setState(() {});

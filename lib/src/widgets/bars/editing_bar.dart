@@ -2,13 +2,11 @@ import 'dart:io';
 import 'package:whatsapp_story_editor/src/controller/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whatsapp_camera/camera/camera_whatsapp.dart';
 import 'package:whatsapp_story_editor/src/constants.dart';
 import 'package:whatsapp_story_editor/src/controller/editing_controller.dart';
 import 'package:whatsapp_story_editor/src/enums/editing_mode.dart';
 import 'package:whatsapp_story_editor/src/views/crop_view.dart';
 import 'package:whatsapp_story_editor/src/views/graphic_view.dart';
-import 'package:whatsapp_story_editor/src/views/main_view.dart';
 import 'package:whatsapp_story_editor/src/widgets/icon_widget.dart';
 import 'package:whatsapp_story_editor/src/widgets/undo.dart';
 

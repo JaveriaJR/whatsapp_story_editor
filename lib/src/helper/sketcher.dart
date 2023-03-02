@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:perfect_freehand/perfect_freehand.dart';
@@ -7,7 +5,6 @@ import 'package:whatsapp_story_editor/src/controller/editing_controller.dart';
 import 'package:whatsapp_story_editor/src/enums/editing_mode.dart';
 import 'package:whatsapp_story_editor/src/models/graphic_info.dart';
 import 'package:whatsapp_story_editor/src/models/paint_info.dart';
-import 'package:whatsapp_story_editor/src/models/text_info.dart';
 
 class Sketcher extends CustomPainter {
   final EDITINGMODE editingmode;

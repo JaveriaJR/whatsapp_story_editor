@@ -248,15 +248,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.0"
-  matrix_gesture_detector:
-    dependency: transitive
-    description:
-      path: "."
-      ref: master
-      resolved-ref: b1c2d4a3fe0072adf2963b8ff1fdeeb7cde16f61
-      url: "https://github.com/JaveriaJR/matrix_gesture_detector.git"
-    source: git
-    version: "0.2.0-nullsafety"
   meta:
     dependency: transitive
     description:
@@ -548,7 +539,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2"
   win32:
     dependency: transitive
     description:

@@ -18,7 +18,7 @@ class StickerData {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['android_play_store_link'] = androidPlayStoreLink;
     data['ios_app_store_link'] = iosAppStoreLink;
     if (stickerPacks != null) {
@@ -102,8 +102,7 @@ class StickerPacks {
   }
 
   @override
-  String toString() {
-    // TODO: implement toString
+  String toString() { 
     return "identifier: $identifier, name: $name, publisher: $publisher";
   }
 }
