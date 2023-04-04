@@ -1,1 +1,1 @@
-enum EditableItemType { text, graphic }
+enum EditableItemType { text, graphic, shape}

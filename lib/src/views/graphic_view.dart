@@ -9,6 +9,7 @@ import 'package:whatsapp_story_editor/src/models/sticker_data.dart';
 import 'package:whatsapp_story_editor/src/models/graphic_info.dart';
 import 'package:whatsapp_story_editor/src/widgets/circle_widget.dart';
 import 'package:whatsapp_story_editor/src/widgets/icon_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 // Allows to add Graphic (Stickers/Emojie)
 class GraphicView extends StatefulWidget {
@@ -66,6 +67,67 @@ class _GraphicViewState extends State<GraphicView> {
                 const SizedBox(height: 10.0),
                 isSearchSelected ? _searchBar() : _switchBar(),
                 const SizedBox(height: 35),
+                switchSelected == 0
+                    ? const Text("Shapes",
+                        style: TextStyle(color: Colors.grey, fontSize: 13))
+                    : const SizedBox(),
+                switchSelected == 0
+                    ? SizedBox(
+                        height: 200,
+                        child: GridView.builder(
+                          padding: const EdgeInsets.all(0),
+                          itemCount: EditableItem.getSvgShapes().length,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 4,
+                          ),
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              alignment: (index + 1) % 4 == 0
+                                  ? Alignment.centerRight
+                                  : index % 4 == 0
+                                      ? Alignment.centerLeft
+                                      : Alignment.center,
+                              margin: (index + 1) % 4 == 0
+                                  ? const EdgeInsets.only(left: 14)
+                                  : index % 4 == 0
+                                      ? const EdgeInsets.only(right: 14)
+                                      : const EdgeInsets.only(
+                                          right: 8, left: 8),
+                              child: GestureDetector(
+                                  onTap: () {
+                                    editingController.addtoEditableItemList(
+                                        EditableItem(
+                                            editableItemType:
+                                                EditableItemType.shape,
+                                            shapeSvg:
+                                                EditableItem.changeSvgColor(
+                                                    EditableItem.getSvgShapes()
+                                                        .elementAt(index),
+                                                    editingController
+                                                        .hueController.value
+                                                        .toColor()),
+                                            matrixInfo: Matrix4.identity()));
+
+                                    Navigator.pop(context);
+                                  },
+                                  child: Container(
+                                    color: Colors.black,
+                                    height: 65,
+                                    width: 65,
+                                    child: SvgPicture.string(
+                                      EditableItem.changeSvgColor(
+                                          EditableItem.getSvgShapes()
+                                              .elementAt(index),
+                                          editingController.hueController.value
+                                              .toColor()),
+                                    ),
+                                  )),
+                            );
+                          },
+                        ),
+                      )
+                    : const SizedBox(),
                 Text(switchSelected == 0 ? "Favourites" : "Smileys & People",
                     style: const TextStyle(color: Colors.grey, fontSize: 13)),
                 isStickersLoading
@@ -115,6 +177,13 @@ class _GraphicViewState extends State<GraphicView> {
                                           "packages/whatsapp_story_editor/assets/stickers/2/${stickerData.stickerPacks!.first.stickers![index].imageFile}",
                                           fit: BoxFit.contain,
                                         ),
+                                        // child:  SvgPicture.network(
+                                        //  'http://upload.wikimedia.org/wikipedia/commons/0/02/SVG_logo.svg',
+                                        //   placeholderBuilder: (BuildContext context) => Container(
+                                        //   padding: const EdgeInsets.all(30.0),
+                                        //   child: const CircularProgressIndicator(),
+                                        // ),
+                                        // )
                                       ),
                                     )
                                   : GestureDetector(

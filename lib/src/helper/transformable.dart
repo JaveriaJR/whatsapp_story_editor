@@ -50,7 +50,7 @@ class _TransformableWidgetState extends State<TransformableWidget> {
       child: GestureDetector(
         onTap: () {
           if (widget.onTapDown != null) {
-            widget.onTapDown!();
+            widget.onTapDown!(); 
           }
         },
         child: Container(

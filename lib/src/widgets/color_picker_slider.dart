@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hsv_color_pickers/hsv_color_pickers.dart';
-import 'package:whatsapp_story_editor/src/controller/editing_controller.dart';
+import 'package:whatsapp_story_editor/src/controller/editing_controller.dart'; 
 
 class ColorPickerSlider extends StatefulWidget {
   const ColorPickerSlider({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _ColorPickerSliderState extends State<ColorPickerSlider> {
       child: HuePicker(
         trackHeight: 10,
         controller: HueController(editingController.hueController.value),
-        onChanged: (HSVColor color) {
+        onChanged: (HSVColor color) { 
           setState(() {
             editingController.hueController.value = color;
           });

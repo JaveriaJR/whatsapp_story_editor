@@ -14,3 +14,8 @@
 ## 0.0.4
 
 * changed to dart format
+
+
+## 0.0.5
+
+* Added Shapes (circle, single/double arrow, line, square, rectangle) functionality

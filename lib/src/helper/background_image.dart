@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:whatsapp_story_editor/src/constants.dart';
 import 'package:whatsapp_story_editor/src/controller/editing_controller.dart';
@@ -202,6 +203,7 @@ class _BackgroundImageState extends State<BackgroundImage>
                             },
                             onScaleEnd: (d) {
                               controller.isDeletionEligible = false;
+                              setState(() {});
                             },
                             transform: controller.editableItemInfo
                                 .elementAt(j)!
@@ -235,39 +237,82 @@ class _BackgroundImageState extends State<BackgroundImage>
                                                 .color)),
                               ),
                             ))
-                        : TransformableWidget(
-                            onScaleStart: (details) {
-                              checkIfDeletionEligible(j, details);
-                            },
-                            onScaleEnd: (d) {
-                              controller.isDeletionEligible = false;
-                            },
-                            transform: controller.editableItemInfo
-                                .elementAt(j)!
-                                .matrixInfo,
-                            onDetailsUpdate: (Matrix4 matrix4) {
-                              controller.editableItemInfo[j] = EditableItem(
-                                  editableItemType: controller.editableItemInfo
-                                      .elementAt(j)!
-                                      .editableItemType,
-                                  graphicImagePath: controller.editableItemInfo
-                                      .elementAt(j)!
-                                      .graphicImagePath,
-                                  matrixInfo: matrix4);
-                            },
-                            child: ScaleTransition(
-                                scale: currentTransformingWidget == j
-                                    ? animation
-                                    : Tween<double>(begin: 1.0, end: 1.0)
-                                        .animate(CurvedAnimation(
-                                            parent: animationController,
-                                            curve: Curves.easeInOut)),
-                                child: Image.asset(
-                                  controller.editableItemInfo
-                                      .elementAt(j)!
-                                      .graphicImagePath!,
-                                  fit: BoxFit.contain,
-                                ))),
+                        : controller.editableItemInfo
+                                    .elementAt(j)!
+                                    .editableItemType ==
+                                EditableItemType.graphic
+                            ? TransformableWidget(
+                                onScaleStart: (details) {
+                                  checkIfDeletionEligible(j, details);
+                                },
+                                onScaleEnd: (d) {
+                                  controller.isDeletionEligible = false;
+                                  setState(() {});
+                                },
+                                transform: controller.editableItemInfo
+                                    .elementAt(j)!
+                                    .matrixInfo,
+                                onDetailsUpdate: (Matrix4 matrix4) {
+                                  controller.editableItemInfo[j] = EditableItem(
+                                      editableItemType: controller
+                                          .editableItemInfo
+                                          .elementAt(j)!
+                                          .editableItemType,
+                                      graphicImagePath: controller
+                                          .editableItemInfo
+                                          .elementAt(j)!
+                                          .graphicImagePath,
+                                      matrixInfo: matrix4);
+                                },
+                                child: ScaleTransition(
+                                    scale: currentTransformingWidget == j
+                                        ? animation
+                                        : Tween<double>(begin: 1.0, end: 1.0)
+                                            .animate(CurvedAnimation(
+                                                parent: animationController,
+                                                curve: Curves.easeInOut)),
+                                    child: Image.asset(
+                                      controller.editableItemInfo
+                                          .elementAt(j)!
+                                          .graphicImagePath!,
+                                      fit: BoxFit.contain,
+                                    )))
+                            : TransformableWidget(
+                                onScaleStart: (details) {
+                                  checkIfDeletionEligible(j, details);
+                                },
+                                onScaleEnd: (d) {
+                                  controller.isDeletionEligible = false;
+                                  setState(() {});
+                                },
+                                transform: controller.editableItemInfo
+                                    .elementAt(j)!
+                                    .matrixInfo,
+                                onDetailsUpdate: (Matrix4 matrix4) {
+                                  controller.editableItemInfo[j] = EditableItem(
+                                      editableItemType: controller
+                                          .editableItemInfo
+                                          .elementAt(j)!
+                                          .editableItemType,
+                                      shapeSvg: controller.editableItemInfo
+                                          .elementAt(j)!
+                                          .shapeSvg,
+                                      matrixInfo: matrix4);
+                                },
+                                child: ScaleTransition(
+                                    scale: currentTransformingWidget == j
+                                        ? animation
+                                        : Tween<double>(begin: 1.0, end: 1.0)
+                                            .animate(CurvedAnimation(
+                                                parent: animationController,
+                                                curve: Curves.easeInOut)),
+                                    child: SvgPicture.string(
+                                      controller.editableItemInfo
+                                          .elementAt(j)!
+                                          .shapeSvg!,
+                                      height: 100,
+                                      fit: BoxFit.fitWidth,
+                                    ))),
                 ],
               ))),
     );
