@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:whatsapp_story_editor/src/constants.dart';
 import 'package:whatsapp_story_editor/src/controller/editing_controller.dart';
-import 'package:whatsapp_story_editor/src/enums/editing_mode.dart';
-import 'package:whatsapp_story_editor/src/views/crop_view.dart';
+import 'package:whatsapp_story_editor/src/enums/editing_mode.dart'; 
 import 'package:whatsapp_story_editor/src/views/graphic_view.dart';
+import 'package:whatsapp_story_editor/src/views/crop_view.dart';
 import 'package:whatsapp_story_editor/src/widgets/icon_widget.dart';
 import 'package:whatsapp_story_editor/src/widgets/undo.dart';
 
@@ -38,7 +38,9 @@ editingBar({required BuildContext context, required File file}) {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => CropView(image: file)));
+                        builder: (context) => CropView(image: file)
+                        // builder: (context) => CropView2(image:file,title: "Hello",)
+                    ));
               });
             }),
         const SizedBox(width: 16.0),

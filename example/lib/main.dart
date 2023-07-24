@@ -10,7 +10,7 @@ void main() {
     statusBarIconBrightness: Brightness.light,
     systemNavigationBarIconBrightness: Brightness.light,
   ));
-  runApp(const MyApp());
+  runApp( const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -80,10 +80,10 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 const Spacer(),
-                Expanded(
+                const Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       Text(
                         "Chats",
                         style: TextStyle(

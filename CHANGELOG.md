@@ -19,3 +19,7 @@
 ## 0.0.5
 
 * Added Shapes (circle, single/double arrow, line, square, rectangle) functionality
+
+## 0.0.6 
+
+* handled image_crop_plus_updated issue

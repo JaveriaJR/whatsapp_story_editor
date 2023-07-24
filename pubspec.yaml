@@ -3,6 +3,7 @@ description: A Flutter package to add story editing features similar to Whatsapp
 version: 0.0.5
 homepage: https://github.com/JaveriaJR/whatsapp_story_editor/tree/main
 
+
 environment:
   sdk: '>=2.18.6 <3.0.0'
   flutter: ">=1.17.0"
@@ -14,11 +15,15 @@ dependencies:
   whatsapp_camera: ^1.0.0
   photofilters: ^3.0.1
   perfect_freehand: ^1.0.4
-  image_crop_plus: ^0.6.1
+  image_crop_plus_updated: ^0.7.1
   hsv_color_pickers: ^0.2.2 
   get: ^4.6.1
   path_provider: ^2.0.12 
   flutter_svg: ^2.0.4
+
+  dotted_border: ^2.0.0+2
+  image_cropper: ^4.0.1
+  image_picker: ^0.8.7+5
   # matrix_gesture_detector: 
   #   git:
   #     url: https://github.com/JaveriaJR/matrix_gesture_detector.git
@@ -46,6 +51,11 @@ flutter:
     # - packages/whatsapp_story_editor/assets/stickers/
     # - packages/whatsapp_story_editor/assets/stickers/2/ 
     # - packages/whatsapp_story_editor/assets/icons/story.png
+
+analyzer:
+  strong-mode: true
+  language:
+    enableSuperMixins: true
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages

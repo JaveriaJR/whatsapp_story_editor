@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_crop_plus/image_crop_plus.dart';
+import 'package:image_crop_plus_updated/image_crop_plus_updated.dart';
 import 'package:whatsapp_story_editor/src/controller/editing_controller.dart';
 import 'package:whatsapp_story_editor/src/controller/utils.dart';
 import 'package:whatsapp_story_editor/src/widgets/icon_widget.dart';
