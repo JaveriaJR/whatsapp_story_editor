@@ -12,22 +12,19 @@ dependencies:
   flutter:
     sdk: flutter
 
-  whatsapp_camera: ^1.0.0
-  photofilters: ^3.0.1
-  perfect_freehand: ^1.0.4
-  image_crop_plus_updated: ^0.7.1
-  hsv_color_pickers: ^0.2.2 
-  get: ^4.6.1
-  path_provider: ^2.0.12 
-  flutter_svg: ^2.0.4
+  whatsapp_camera: 
+  photofilters: 
+  perfect_freehand: 
+  image_crop_plus_updated: 
+  hsv_color_pickers: 
+  get:
+  path_provider: 
+  flutter_svg: 
 
-  dotted_border: ^2.0.0+2
-  image_cropper: ^4.0.1
-  image_picker: ^0.8.7+5
-  # matrix_gesture_detector: 
-  #   git:
-  #     url: https://github.com/JaveriaJR/matrix_gesture_detector.git
-  #     ref: master 
+  dotted_border: 
+  image_cropper: 
+  image_picker: 
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
