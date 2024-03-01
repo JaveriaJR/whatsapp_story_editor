@@ -60,6 +60,52 @@ class _MyAppState extends State<MyApp> {
                   color: Colors.white,
                   size: 20,
                 ),
+<<<<<<< Updated upstream
+=======
+                itemCount: imageUrls.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WhatsappStoryEditor(
+                                  image: imageUrls[index],
+                                )),
+                      ).then((whatsappStoryEditorResult) {
+                        
+                        setState(() {
+                          data = whatsappStoryEditorResult;
+                        });
+                        print("data :${data.image}");
+                        print("data :${data.caption}");
+                      });
+                    },
+                    child: Image.file(
+                      imageUrls[index]!,
+                      fit: BoxFit
+                          .cover, // Adjust the image to cover the entire cell
+                    ),
+                  );
+                },
+              )
+            ],
+          ):Stack(
+            children: [
+              
+                  Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                  child: Container(
+                  alignment: Alignment.center,
+                  child: Image(
+                    image: data.image,
+                    fit: BoxFit.contain,
+                  ),
+                  ),
+>>>>>>> Stashed changes
               ),
             );
           }),
