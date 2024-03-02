@@ -25,6 +25,19 @@ class _MainControllerViewState extends State<MainControllerView> {
   HueController huecontroller = HueController(HSVColor.fromColor(Colors.green));
 
   final ValueNotifier<Matrix4> notifier = ValueNotifier(Matrix4.identity());
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.onClose();
+
+    controller.dispose();
+    huecontroller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,54 +50,6 @@ class _MainControllerViewState extends State<MainControllerView> {
       child: SafeArea(
         child: Scaffold(
             backgroundColor: Colors.black,
-            // body: Center(
-            //   child: Column(children: [
-            //     MatrixGestureDetector(
-            //       onScaleStart: (d) {
-            //         EditableItem.changeSvgColor(
-            //             EditableItem.circleShapeSvg(), Colors.red);
-            //         print("start: " + d.toString());
-            //       },
-            //       onScaleEnd: (d) {
-            //         print("end: " + d.toString());
-            //       },
-            //       clipChild: false,
-            //       onMatrixUpdate: (m, tm, sm, rm) {
-            //         notifier.value = m;
-            //       },
-            //       child: GestureDetector(
-            //         onTap: () {},
-            //         child: Container(
-            //           width: MediaQuery.of(context).size.width,
-            //           height: MediaQuery.of(context).size.height - 100,
-            //           alignment: Alignment.center,
-            //           child: AnimatedBuilder(
-            //             animation: notifier,
-            //             builder: (ctx, childw) {
-            //               return Transform(
-            //                   transform: notifier.value,
-            //                   child: Container(
-            //                     height: 200,
-            //                     width: 200,
-            //                     //Circle:
-            //                     child: SvgPicture.string(
-            //                         EditableItem.squareShapeSvg()),
-            //                     //Arrow:
-            //                     //child: SvgPicture.string("""<svg height="24" width="24"> <path d="M2,12 L22,12 M16,6 L22,12 L16,18" stroke="black" stroke-width="1" fill="none" /></svg>""")
-            //                     //Line:
-            //                     //child: SvgPicture.string("""<svg height="2" width="100"> <line x1="0" y1="1" x2="100" y2="1" stroke="black" stroke-width="2" /></svg>"""),
-            //                     //doubleArrow:
-            //                     //child: SvgPicture.string("""<svg height="24" width="24"><path d="M2,12 L10,12 M14,12 L22,12 M16,6 L22,12 L16,18 M2,12 L10,12 M14,12 L2,12 M8,6 L2,12 L8,18" stroke="black" stroke-width="2" fill="none" /></svg>"""),
-            //                     // rectangle:
-            //                     // child: SvgPicture.string("""<svg height="100" width="200"><rect x="50" y="20" width="100" height="60" stroke="black" stroke-width="2" fill="none" /></svg>""")
-            //                   ));
-            //             },
-            //           ),
-            //         ),
-            //       ),
-            //     )
-            //   ]),
-            // ),
             body: Obx(
               () => controller.editingModeSelected == EDITINGMODE.FILTERS
                   ? Column(

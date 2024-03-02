@@ -27,7 +27,7 @@ class BasicView extends StatelessWidget {
                   : editingBar(file: file, context: context),
             ),
             const Spacer(),
-            captionBar(context: context),
+            
             bottomBar(context: context),
           ],
         ),

@@ -156,6 +156,7 @@ class _BackgroundImageState extends State<BackgroundImage>
                               TextDialog.show(
                                   context,
                                   TextEditingController(
+                                    
                                       text: controller.editableItemInfo
                                           .elementAt(j)!
                                           .text!

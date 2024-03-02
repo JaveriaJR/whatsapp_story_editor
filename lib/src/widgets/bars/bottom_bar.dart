@@ -13,49 +13,51 @@ bottomBar({required BuildContext context}) => Container(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Row(
         children: [
-          Container(
-            padding:
-                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
-            decoration: BoxDecoration(
-                color: Constants.mattBlack,
-                borderRadius: const BorderRadius.all(Radius.circular(20.0))),
-            child: Row(
-              children: [
-                Image.asset(
-                  'assets/icons/story.png',
-                  package: 'whatsapp_story_editor',
-                  color: Colors.white,
-                  height: 16,
-                ),
-                const SizedBox(width: 5.0),
-                Text(
-                  "Status (2 included)",
-                  style: TextStyle(
-                      color: Colors.white.withOpacity(0.9), fontSize: 13),
-                ),
-              ],
+          const Spacer(),
+          TextButton(
+            style: TextButton.styleFrom(
+              primary: Colors.teal,
+              // backgroundColor: ,
+              // onPrimary: Colors.white,
+               shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+              side: const BorderSide(color: Colors.white, width: 1),
+            ),
+            onPressed: () async {
+              takeScreenshotAndReturnMemoryImage(getScreenshotKey)
+                  .then((imageData) {
+                Navigator.pop(context);
+                Navigator.pop(
+                    context,
+                    WhatsappStoryEditorResult(
+                        image: imageData,
+                        caption: Get.find<EditingController>().caption));
+              });
+            },
+            child: const Text(
+              "save",
+              style: TextStyle(color: Colors.white),
             ),
           ),
-          const Spacer(),
-          circleWidget(
-              radius: 50,
-              padding: const EdgeInsets.only(left: 5.0),
-              child: Image.asset(
-                "assets/icons/send.png",
-                package: 'whatsapp_story_editor',
-                color: Colors.white,
-              ),
-              onTap: () async {
-                takeScreenshotAndReturnMemoryImage(getScreenshotKey)
-                    .then((imageData) {
-                  Navigator.pop(context);
-                  Navigator.pop(
-                      context,
-                      WhatsappStoryEditorResult(
-                          image: imageData,
-                          caption: Get.find<EditingController>().caption));
-                });
-              }),
+          // circleWidget(
+          //     radius: 50,
+          //     padding: const EdgeInsets.only(left: 5.0),
+          //     child: Center(
+          //       child: Text(
+          //         "save",
+          //         style: TextStyle(color: Colors.white),
+          //       ),
+          //     ),
+          //     onTap: () async {
+          //       takeScreenshotAndReturnMemoryImage(getScreenshotKey)
+          //           .then((imageData) {
+          //         Navigator.pop(context);
+          //         Navigator.pop(
+          //             context,
+          //             WhatsappStoryEditorResult(
+          //                 image: imageData,
+          //                 caption: Get.find<EditingController>().caption));
+          //       });
+          //     }),
         ],
       ),
     );

@@ -108,7 +108,8 @@ class _TextViewState extends State<TextView> {
                                 text: text,
                                 offset: null,
                                 color: controller.hueController.value
-                                    .toColor())))),
+                                    .toColor())
+                                    ))),
                 child: const Icon(
                   Icons.title,
                   color: Colors.white,
@@ -127,6 +128,7 @@ class _TextViewState extends State<TextView> {
       //   // lastTappedOffset = details.localPosition;
       // }),
       onTap: () {
+       
         _showTextEditDialog();
       },
       child: Container(
